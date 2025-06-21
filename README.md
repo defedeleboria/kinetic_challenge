@@ -44,16 +44,27 @@
 | ROC-AUC   |  0.83 |
 
 ## How to Run
+
+How to clone and run the project locally in VS Code?
+Clone the repository!
+
 ```bash
-# 0) Python ≥3.10 + install deps
+# 1) Replace <user> with your GitHub username
+git clone https://github.com/<user>/kinetic_challenge.git
+cd kinetic_challenge
+
+# 2) Open the folder in VS Code
+code .
+
+# 3) Python ≥3.10 + install deps (VS Code Terminal)
 python -m venv venv
 source venv/bin/activate 
 pip install -r requirements.txt
 
-# 1) Train model & generate artefacts
+# 4) Train model & generate artefacts
 python churn_analysis.py --data-dir ./data --plots --shap --model rf
 
-# 2) Launch dashboard
+# 5) Launch dashboard
 streamlit run streamlit_app.py --server.runOnSave true
 ```
 
